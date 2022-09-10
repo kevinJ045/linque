@@ -1,0 +1,7 @@
+:root{
+    --theme: #ea1e63;
+    --theme-bg: #080014;
+    --theme-bg-accent: #0c001f;
+    --theme-rgb: rgb(234, 30, 99);
+    --theme-rgba: rgba(234, 30, 99, 0.4);
+}

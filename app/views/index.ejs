@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="theme-<%= user.color %>">
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="theme-color" content="#141526">
+	<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+	<meta name="color-scheme" content="light dark">
+	<title>Linque</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+
+		<link rel="stylesheet" type="text/css" href="/app/res/css/main.css">
+		<link rel="stylesheet" type="text/css" href="/app/res/css/lib.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <script>
+        window.location.cpath = "<%= page %>";
+        window.__user__ = {
+            username: "<%= user.username %>",
+            logged_in: "<%= user.logged_in %>",
+            color: "<%= user.color %>"
+        };
+    </script>
+
+</head>
+<body>
+
+    <div id="app"></div>
+		<div id="modals">
+			<div class="modal" id="abouttext">
+			  <i class="close fa fa-close"></i>
+			  <div id="abouttext-div"></div>
+			</div>
+			<div class="modal" id="linkAdd">
+			  <i class="close fa fa-close"></i>
+			  <h3>Add Link</h3>
+			  <p>Share a link to everyone</p>
+			  <input type="text" id="name-link" class="input" placeholder="Link name" />
+			  <input type="text" id="url-link" class="input" placeholder="Link url" />
+			  <textarea id="about-link" class="input" placeholder="About yout link..."></textarea>
+			  <button id="add-link-submit" class="full-btn"><i class="fa fa-share"></i> Share</button>
+			</div>
+		</div>
+
+		<script src="/socket.io/socket.io.js"></script>
+    <script src="/app/res/js/jquery.js"></script>
+    <script src="/app/res/js/lib.js"></script>
+		<script src="/app/res/js/main.js"></script>
+</body>
+</html>
