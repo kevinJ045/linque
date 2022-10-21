@@ -143,7 +143,10 @@ $(window).on('load',function(that) {
 			window.open($(this).attr("data-url"));
 		});
 		$(".card .info").click(function(){
+			var url = $(this).closest('.card').find('.open').attr('data-url');
+			$("#abouttext-div").empty();
 			$("#abouttext-div").text($(this).closest('.card').find('.about').text());
+			$("#abouttext-div").append('<br /><br /><a href="'+url+'" target="_blank">'+url+'</a>');
 			openModal('abouttext');
 		});
 		$(".card .poster").click(function(){
@@ -394,6 +397,10 @@ $(window).on('load',function(that) {
 
 	var writeData = function(data){
 		$("#app").html(data);
+	}
+
+	if(location.pathname == "/app"){
+		location.href = "/app/";
 	}
 
 	if(location.pathname == "/app/" || page.match("/home")){
